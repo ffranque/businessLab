@@ -1,5 +1,6 @@
 package com.amaris.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,38 @@ public class ProjectServiceImpl implements ProjectService {
 
 	public void updateProjectConsultant(Consultant consultant, Long id) {
 		projectRepository.updateProjectConsultant(consultant, id);
+	}
+
+	public void updateName(String name, Long id) {
+		projectRepository.updateName(name, id);
+	}
+
+	public void updateType(String type, Long id) {
+		projectRepository.updateType(type, id);
+	}
+
+	public void updateClientName(String clientName, Long id) {
+		projectRepository.updateClientName(clientName, id);
+	}
+
+	public void updateProjectManager(String projectManager, Long id) {
+		projectRepository.updateProjectManager(projectManager, id);
+	}
+
+	public void updateSector(String sector, Long id) {
+		projectRepository.updateSector(sector, id);
+	}
+
+	public void updateBeginningDate(Date beginningDate, Long id) {
+		projectRepository.updateBeginningDate(beginningDate, id);
+	}
+
+	public void updateEndDate(Date endDate, Long id) {
+		projectRepository.updateEndDate(endDate, id);
+	}
+
+	public void updateForcastedEndDate(Date forcastedEndDate, Long id) {
+		projectRepository.updateForcastedEndDate(forcastedEndDate, id);
 	}
 
 }

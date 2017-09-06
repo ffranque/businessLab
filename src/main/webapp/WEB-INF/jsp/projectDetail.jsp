@@ -1,6 +1,9 @@
 <%@ include file="/WEB-INF/jsp/shared/header.jsp"%>
 <div class="container">
-	<h3>${project.name}</h3>
+	<h3>
+		<a href="#" id="nameP" class="editable editable-click" data-type="text"
+			data-pk="${project.id}" data-url="/BusinessLab01/project/updateName.html">${project.name}</a>
+	</h3>
 
 	<div class="row margin-top-15">
 		<div class="col-md-6">
@@ -16,21 +19,37 @@
 					<div class="row margin-top-10">
 						<div class="col-md-6">
 							<div class="col-md-3">Type</div>
-							<div class="col-md-9">${project.type}</div>
+							<div class="col-md-9">
+								<a href="#" id="type" class="editable editable-click"
+									data-type="text" data-pk="${project.id}"
+									data-url="/BusinessLab01/project/updateType.html">${project.type}</a>
+							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="col-md-3">Manager</div>
-							<div class="col-md-9">${project.projectManager}</div>
+							<div class="col-md-9">
+								<a href="#" id="projectManager" class="editable editable-click"
+									data-type="text" data-pk="${project.id}"
+									data-url="/BusinessLab01/project/updateManager.html">${project.projectManager}</a>
+							</div>
 						</div>
 					</div>
 					<div class="row margin-top-10">
 						<div class="col-md-6">
 							<div class="col-md-3">Client</div>
-							<div class="col-md-9">${project.clientName}</div>
+							<div class="col-md-9">
+								<a href="#" id="clientName" class="editable editable-click"
+									data-type="text" data-pk="${project.id}"
+									data-url="/BusinessLab01/project/updateClientName.html">${project.clientName}</a>
+							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="col-md-3">Sector</div>
-							<div class="col-md-9">${project.sector}</div>
+							<div class="col-md-9">
+								<a href="#" id="sectorP" class="editable editable-click"
+									data-type="text" data-pk="${project.id}"
+									data-url="/BusinessLab01/project/updateSector.html">${project.sector}</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -45,15 +64,27 @@
 				<div class="panel-body">
 					<div class="row margin-top-10">
 						<div class="col-md-4">Beginning Date</div>
-						<div class="col-md-8">${project.beginningDate}</div>
+						<div class="col-md-8">
+							<a href="#" id="beginningDate" class="editable editable-click"
+									data-type="text" data-pk="${project.id}"
+									data-url="/BusinessLab01/project/updateBeginningDate.html">${project.beginningDate}</a>
+						</div>
 					</div>
 					<div class="row margin-top-10">
 						<div class="col-md-4">End Date</div>
-						<div class="col-md-8">${project.endDate }</div>
+						<div class="col-md-8">
+							<a href="#" id="endDate" class="editable editable-click"
+									data-type="text" data-pk="${project.id}"
+									data-url="/BusinessLab01/project/updateEndDate.html">${project.endDate}</a>
+						</div>
 					</div>
 					<div class="row margin-top-10">
 						<div class="col-md-4">Forecasted End Date</div>
-						<div class="col-md-8">${project.forcastedEndDate}</div>
+						<div class="col-md-8">
+							<a href="#" id="forcastedEndDate" class="editable editable-click"
+									data-type="text" data-pk="${project.id}"
+									data-url="/BusinessLab01/project/updateForcastedEndDate.html">${project.forcastedEndDate}</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -84,24 +115,24 @@
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<form:form modelAttribute="consultant" action="addConsultant.html">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title" id="gridSystemModalLabel">Consultant</h4>
-				</div>
-				<div class="modal-body">
-					<div class="form-group">
-						<label for="textinput1">Name</label>
-						<form:input path="name" cssClass="form-control" />
-						<input type="hidden" name="projectId" value="${project.id}"/>
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="gridSystemModalLabel">Consultant</h4>
 					</div>
-				</div>
-				<div class="modal-footer">
-					<input type="submit" class="btn btn-primary" value="Save" />
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="textinput1">Name</label>
+							<form:input path="name" cssClass="form-control" />
+							<input type="hidden" name="projectId" value="${project.id}" />
+						</div>
+					</div>
+					<div class="modal-footer">
+						<input type="submit" class="btn btn-primary" value="Save" />
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
 				</form:form>
 			</div>
 		</div>

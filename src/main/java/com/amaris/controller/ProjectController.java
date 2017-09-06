@@ -1,11 +1,15 @@
 package com.amaris.controller;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.amaris.model.Client;
 import com.amaris.model.Consultant;
@@ -66,5 +70,69 @@ public class ProjectController {
 		model.addAttribute("consultant", new Consultant());
 		
 		return "projectDetail";
+	}
+	
+	@RequestMapping(value = "/project/updateName", method = RequestMethod.POST)
+	public @ResponseBody String editName(@RequestParam("value") String name, @RequestParam("pk") Long id) {
+		projectService.updateName(name, id);
+		System.out.println("Project Name Updated!");
+		System.out.println(name + "--" + id);
+		return "";
+	}
+	
+	@RequestMapping(value = "/project/updateType", method = RequestMethod.POST)
+	public @ResponseBody String editType(@RequestParam("value") String type, @RequestParam("pk") Long id) {
+		projectService.updateType(type, id);
+		System.out.println("Project type Updated!");
+		System.out.println(type + "--" + id);
+		return "";
+	}
+	
+	@RequestMapping(value = "/project/updateClientName", method = RequestMethod.POST)
+	public @ResponseBody String editClientName(@RequestParam("value") String clientName, @RequestParam("pk") Long id) {
+		projectService.updateClientName(clientName, id);
+		System.out.println("Project client Updated!");
+		System.out.println(clientName + "--" + id);
+		return "";
+	}
+	
+	@RequestMapping(value = "/project/updateManager", method = RequestMethod.POST)
+	public @ResponseBody String editManager(@RequestParam("value") String manager, @RequestParam("pk") Long id) {
+		projectService.updateProjectManager(manager, id);
+		System.out.println("Project manager Updated!");
+		System.out.println(manager + "--" + id);
+		return "";
+	}
+	
+	@RequestMapping(value = "/project/updateSector", method = RequestMethod.POST)
+	public @ResponseBody String editSector(@RequestParam("value") String sector, @RequestParam("pk") Long id) {
+		projectService.updateSector(sector, id);
+		System.out.println("Project sector Updated!");
+		System.out.println(sector + "--" + id);
+		return "";
+	}
+	
+	@RequestMapping(value = "/project/updateBeginningDate", method = RequestMethod.POST)
+	public @ResponseBody String editBeginningDate(@RequestParam("value") Date beginningDate, @RequestParam("pk") Long id) {
+		projectService.updateBeginningDate(beginningDate, id);
+		System.out.println("Project sector Updated!");
+		System.out.println(beginningDate + "--" + id);
+		return "";
+	}
+	
+	@RequestMapping(value = "/project/updateEndDate", method = RequestMethod.POST)
+	public @ResponseBody String editEndDate(@RequestParam("value") Date endDate, @RequestParam("pk") Long id) {
+		projectService.updateEndDate(endDate, id);
+		System.out.println("Project sector Updated!");
+		System.out.println(endDate + "--" + id);
+		return "";
+	}
+	
+	@RequestMapping(value = "/project/updateForcastedEndDate", method = RequestMethod.POST)
+	public @ResponseBody String editForcastedEndDate(@RequestParam("value") Date forcastedEndDate, @RequestParam("pk") Long id) {
+		projectService.updateForcastedEndDate(forcastedEndDate, id);
+		System.out.println("Project sector Updated!");
+		System.out.println(forcastedEndDate + "--" + id);
+		return "";
 	}
 }
