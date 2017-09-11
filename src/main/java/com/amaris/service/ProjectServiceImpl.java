@@ -75,4 +75,8 @@ public class ProjectServiceImpl implements ProjectService {
 		projectRepository.updateForcastedEndDate(forcastedEndDate, id);
 	}
 
+	public void cancelConsultant(boolean isCanceled, Long id) {
+		projectRepository.cancelConsultant(isCanceled, id);
+	}
+
 }

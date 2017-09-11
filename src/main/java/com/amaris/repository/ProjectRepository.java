@@ -55,4 +55,8 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
 	@Query("Update Project p set p.consultant = :consultant where id = :id")
 	void updateProjectConsultant(@Param("consultant") Consultant consultant, @Param("id") Long id);
 	
+	@Modifying
+	@Query("Update Consultant c set c.isCanceled = :isCanceled where id = :id")
+	void cancelConsultant(@Param("isCanceled") boolean isCanceled, @Param("id") Long id);
+	
 }

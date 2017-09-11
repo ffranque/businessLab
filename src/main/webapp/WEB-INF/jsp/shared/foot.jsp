@@ -2,6 +2,7 @@
 <script src="assets/js/jquery-3.2.1.js"></script>
 <script src="assets/js/bootstrap.js"></script>
 <script src="assets/js/bootstrap-editable.js"></script>
+<script src="assets/js/bootstrap-confirm-delete.js"></script>
 </body>
 </html>
 <script type="text/javascript">
@@ -27,6 +28,16 @@ $.fn.editable.defaults.mode = 'inline';
 	    $('#projectManager').editable();
 	    $('#type').editable();
 	    $('#nameP').editable();
+	    
+	    $('.cancelConsultant').bootstrap_confirm_delete(
+	            {
+	                debug:              false,
+	                heading:            'Delete',
+	                message:            'Are you sure you want to delete?',
+	                btn_ok_label:       'Yes',
+	                btn_cancel_label:   'Cancel'
+	            }
+	        );
 		
 // 			$.getJSON('<spring:url value="activities.json"/>', {
 // 				ajax : 'true'

@@ -1,8 +1,10 @@
 <%@ include file="/WEB-INF/jsp/shared/header.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="container">
 	<h3>
-		<a href="#" id="nameP" class="editable editable-click" data-type="text"
-			data-pk="${project.id}" data-url="/BusinessLab01/project/updateName.html">${project.name}</a>
+		<a href="#" id="nameP" class="editable editable-click"
+			data-type="text" data-pk="${project.id}"
+			data-url="/BusinessLab01/project/updateName.html">${project.name}</a>
 	</h3>
 
 	<div class="row margin-top-15">
@@ -66,24 +68,24 @@
 						<div class="col-md-4">Beginning Date</div>
 						<div class="col-md-8">
 							<a href="#" id="beginningDate" class="editable editable-click"
-									data-type="text" data-pk="${project.id}"
-									data-url="/BusinessLab01/project/updateBeginningDate.html">${project.beginningDate}</a>
+								data-type="text" data-pk="${project.id}"
+								data-url="/BusinessLab01/project/updateBeginningDate.html">${project.beginningDate}</a>
 						</div>
 					</div>
 					<div class="row margin-top-10">
 						<div class="col-md-4">End Date</div>
 						<div class="col-md-8">
 							<a href="#" id="endDate" class="editable editable-click"
-									data-type="text" data-pk="${project.id}"
-									data-url="/BusinessLab01/project/updateEndDate.html">${project.endDate}</a>
+								data-type="text" data-pk="${project.id}"
+								data-url="/BusinessLab01/project/updateEndDate.html">${project.endDate}</a>
 						</div>
 					</div>
 					<div class="row margin-top-10">
 						<div class="col-md-4">Forecasted End Date</div>
 						<div class="col-md-8">
 							<a href="#" id="forcastedEndDate" class="editable editable-click"
-									data-type="text" data-pk="${project.id}"
-									data-url="/BusinessLab01/project/updateForcastedEndDate.html">${project.forcastedEndDate}</a>
+								data-type="text" data-pk="${project.id}"
+								data-url="/BusinessLab01/project/updateForcastedEndDate.html">${project.forcastedEndDate}</a>
 						</div>
 					</div>
 				</div>
@@ -101,10 +103,16 @@
 				</div>
 				<div class="panel-body">
 					<div class="row margin-top-10">
-						<div class="col-md-6">${project.consultant.name}</div>
-						<div class="col-md-6">
-							<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-						</div>
+						<c:if test="${project.consultant.isCanceled == false}">
+							<div class="col-md-6">${project.consultant.name}</div>
+							<div class="col-md-6">
+								<a
+									href="/BusinessLab01/cancelConsultant.html?id=${project.consultant.id}&pid=${project.id}"
+									class="cancelConsultant" data-type="post"> <span
+									class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+								</a>
+							</div>
+						</c:if>
 					</div>
 				</div>
 			</div>
