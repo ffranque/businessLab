@@ -30,11 +30,11 @@ public class Consultant {
 		return name;
 	}
 
-	public boolean isCanceled() {
+	public boolean getIsCanceled() {
 		return isCanceled;
 	}
 
-	public void setCanceled(boolean isCanceled) {
+	public void setIsCanceled(boolean isCanceled) {
 		this.isCanceled = isCanceled;
 	}
 

@@ -17,7 +17,7 @@
 		</div>
 		<div class="row"></div>
 	</div>
-	
+
 	<div class="modal fade project-modal-lg" role="dialog"
 		aria-labelledby="myLargeModalLabel">
 		<div class="modal-dialog modal-lg" role="document">
@@ -39,22 +39,24 @@
 			</tr>
 		</thead>
 		<tbody>
-		
-		<c:forEach items="${projectList}" var="project">
-				<tr>
-					<td><a href="projectDetail.html?id=${project.id}"
-						class="btn btn-md"><span class="glyphicon glyphicon-eye-open"
-							aria-hidden="true"></span></a></td>
-					<td>#${project.id}</td>
-					<td>${project.name}</td>
-					<td>${project.clientName}</td>
-					<td>${project.projectManager}</td>
-					<td>${project.forcastedEndDate}</td>
-					<td>#</td>
-					<td>${project.type}</td>
-				</tr>
+
+			<c:forEach items="${projectList}" var="project">
+				<c:if test="${project.isCanceled == false}">
+					<tr>
+						<td><a href="projectDetail.html?id=${project.id}"
+							class="btn btn-md"><span class="glyphicon glyphicon-eye-open"
+								aria-hidden="true"></span></a></td>
+						<td>#${project.id}</td>
+						<td>${project.name}</td>
+						<td>${project.clientName}</td>
+						<td>${project.projectManager}</td>
+						<td>${project.forcastedEndDate}</td>
+						<td>#</td>
+						<td>${project.type}</td>
+					</tr>
+				</c:if>
 			</c:forEach>
-			
+
 		</tbody>
 	</table>
 </div>
