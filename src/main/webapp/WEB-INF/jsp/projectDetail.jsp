@@ -1,5 +1,4 @@
 <%@ include file="/WEB-INF/jsp/shared/header.jsp"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="container">
 	<h3>
 		<a href="#" id="nameP" class="editable editable-click"
@@ -11,6 +10,14 @@
 		<div class="col-md-6">
 			<div class="col-md-4">Current Status</div>
 			<div class="col-md-5">######</div>
+		</div>
+		<div class="col-md-4 col-md-offset-2">
+			<a
+				href="/BusinessLab01/cancelProject.html?id=${project.id}"
+				class="btn btn-danger cancelProject" data-type="post"> <span
+				class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete
+				Project
+			</a>
 		</div>
 	</div>
 	<div class="row margin-top-15">

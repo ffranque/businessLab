@@ -38,4 +38,6 @@ public interface ProjectService {
 	void updateForcastedEndDate(Date forcastedEndDate, Long id);
 	
 	void cancelConsultant(boolean isCanceled, Long id);
+
+	void cancelProject(boolean isCanceled, Long id);
 }

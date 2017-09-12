@@ -79,4 +79,8 @@ public class ProjectServiceImpl implements ProjectService {
 		projectRepository.cancelConsultant(isCanceled, id);
 	}
 
+	public void cancelProject(boolean isCanceled, Long id) {
+		projectRepository.cancelProject(isCanceled, id);
+	}
+
 }

@@ -81,6 +81,16 @@ public class ProjectController {
 		return "redirect:projectDetail.html?id="+pid; 
 	}
 	
+	
+	@RequestMapping(value="/cancelProject", method = RequestMethod.GET)
+	public String cancelProject(Model model, Long id) {
+		model.addAttribute("title", "Project Detail");
+		projectService.cancelProject(true, id);
+		model.addAttribute("consultant", new Consultant());
+		
+		return "redirect:projects.html"; 
+	}
+	
 	@RequestMapping(value = "/project/updateName", method = RequestMethod.POST)
 	public @ResponseBody String editName(@RequestParam("value") String name, @RequestParam("pk") Long id) {
 		projectService.updateName(name, id);

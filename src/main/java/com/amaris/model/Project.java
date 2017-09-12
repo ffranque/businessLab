@@ -83,7 +83,7 @@ public class Project {
 		return type;
 	}
 
-	public boolean isCanceled() {
+	public boolean getIsCanceled() {
 		return isCanceled;
 	}
 
@@ -91,7 +91,7 @@ public class Project {
 		this.beginningDate = beginningDate;
 	}
 
-	public void setCanceled(boolean isCanceled) {
+	public void setIsCanceled(boolean isCanceled) {
 		this.isCanceled = isCanceled;
 	}
 

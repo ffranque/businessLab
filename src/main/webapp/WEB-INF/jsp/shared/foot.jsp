@@ -29,6 +29,17 @@ $.fn.editable.defaults.mode = 'inline';
 	    $('#type').editable();
 	    $('#nameP').editable();
 	    
+	    
+	    $('.cancelProject').bootstrap_confirm_delete(
+	            {
+	                debug:              false,
+	                heading:            'Delete',
+	                message:            'Are you sure you want to delete?',
+	                btn_ok_label:       'Yes',
+	                btn_cancel_label:   'Cancel'
+	            }
+	        );
+		
 	    $('.cancelConsultant').bootstrap_confirm_delete(
 	            {
 	                debug:              false,
