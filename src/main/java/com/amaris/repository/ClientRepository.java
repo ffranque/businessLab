@@ -52,6 +52,18 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
 	@Query("Select c.name from Client c")
 	List<Client> findAllNames();
 	
+	@Query("Select c.sector from Client c")
+	List<Client> findAllSector();
+	
+	@Query("Select c.contactName from Client c")
+	List<Client> findAllContactNames();
+	
+	@Query("Select c.emailAddres from Client c")
+	List<Client> findAllEmails();
+	
+	@Query("Select c.phoneNumber from Client c")
+	List<Client> findAllPhones();
+	
 	Client findFirstByName(String name);
 
 }

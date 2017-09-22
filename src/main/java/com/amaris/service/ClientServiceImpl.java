@@ -76,4 +76,22 @@ public class ClientServiceImpl implements ClientService {
 		clientRepository.updateCountry(country, id);
 	}
 
+	public List<Client> findAllSector() {
+		return clientRepository.findAllSector();
+	}
+
+	public List<Client> findAllContactNames() {
+		return clientRepository.findAllContactNames();
+	}
+
+	public List<Client> findAllEmails() {
+		return clientRepository.findAllEmails();
+	}
+
+	public List<Client> findAllPhones() {
+		return clientRepository.findAllPhones();
+	}
+	
+	
+
 }

@@ -111,6 +111,36 @@ public class ClientController {
 		return "";
 	}
 	
+	@RequestMapping(value = "/getClientNames")
+	public @ResponseBody Object getClientName() {
+		List<Client> names = clientService.findAllNames();
+		return names;
+	}
+	
+	@RequestMapping(value = "/findAllPhones")
+	public @ResponseBody Object findAllPhones() {
+		List<Client> phones = clientService.findAllPhones();
+		return phones;
+	}
+	
+	@RequestMapping(value = "/findAllSectors")
+	public @ResponseBody Object findAllSector() {
+		List<Client> sectors = clientService.findAllSector();
+		return sectors;
+	}
+	
+	@RequestMapping(value = "/findAllContactNames")
+	public @ResponseBody Object findAllContactNames() {
+		List<Client> contactNames = clientService.findAllContactNames();
+		return contactNames;
+	}
+	
+	@RequestMapping(value = "/findAllEmails")
+	public @ResponseBody Object findAllEmails() {
+		List<Client> emails = clientService.findAllEmails();
+		return emails;
+	}
+	
 	@RequestMapping(value = "/client/updateCountry", method = RequestMethod.POST)
 	public @ResponseBody String editCountry(@RequestParam("value") String country, @RequestParam("pk") Long id) {
 		clientService.updateCountry(country, id);

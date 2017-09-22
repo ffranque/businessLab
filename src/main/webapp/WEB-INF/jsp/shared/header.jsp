@@ -13,6 +13,7 @@
 <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 <link href="assets/css/bootstrap-editable.css" rel="stylesheet">
 <link href="assets/css/site.css" rel="stylesheet">
+<link href="assets/css/jquery.typeahead.css" rel="stylesheet">
 <style>
 body {
 	padding-top: 60px; /* 60px to make the container go all the way

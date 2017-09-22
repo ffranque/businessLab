@@ -13,7 +13,19 @@
 				</button>
 			</div>
 			<div class="col-md-8">
-				<input type="text" class="form-control" placeholder="Seach">
+				<div class="typeahead__container">
+					<div class="typeahead__field">
+
+						<span class="typeahead__query"> <input
+							class="form-control js-typeahead-client" type="search" placeholder="Search" autocomplete="off">
+						</span> <span class="typeahead__button">
+							<button type="submit">
+								<i class="typeahead__search-icon"></i>
+							</button>
+						</span>
+
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="row"></div>
@@ -50,7 +62,7 @@
 					<td>${client.contactName}</td>
 					<td>${client.emailAddres}</td>
 					<td>${client.phoneNumber}</td>
-					<td style="text-align:center">${client.projects.size()}</td>
+					<td style="text-align: center">${client.projects.size()}</td>
 				</tr>
 			</c:forEach>
 
