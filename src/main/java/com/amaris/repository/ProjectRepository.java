@@ -55,4 +55,18 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
 	@Query("Update Project p set p.consultant = :consultant where id = :id")
 	void updateProjectConsultant(@Param("consultant") Consultant consultant, @Param("id") Long id);
 	
+	@Query("Select p.name from Project p")
+	List<Project> findAllNames();
+	
+	@Query("Select p.projectManager from Project p")
+	List<Project> findAllProjectManagers();
+	
+	@Query("Select p.forcastedEndDate from Project p")
+	List<Project> findAllForcastedEndDates();
+	
+	@Query("Select p.type from Project p")
+	List<Project> findAllTypes();
+	
+	@Query("Select p.clientName from Project p")
+	List<Project> findAllClientNames();
 }

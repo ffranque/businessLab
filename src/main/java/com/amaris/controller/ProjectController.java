@@ -1,6 +1,10 @@
 package com.amaris.controller;
 
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +21,10 @@ import com.amaris.model.Project;
 import com.amaris.service.ClientService;
 import com.amaris.service.ConsultantService;
 import com.amaris.service.ProjectService;
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 @Controller
 public class ProjectController {
@@ -134,5 +142,42 @@ public class ProjectController {
 		System.out.println("Project sector Updated!");
 		System.out.println(forcastedEndDate + "--" + id);
 		return "";
+	}
+	
+	@RequestMapping(value = "/getProjectNames")
+	public @ResponseBody Object getProjectNames() {
+		List<Project> names = projectService.findAllNames();
+		return names;
+	}
+	
+	@RequestMapping(value = "/findAllProjectManagers")
+	public @ResponseBody Object findAllProjectManagers() {
+		List<Project> pm = projectService.findAllProjectManagers();
+		return pm;
+	}
+	
+	@RequestMapping(value = "/findAllForcastedEndDates")
+	public @ResponseBody Object findAllForcastedEndDates() throws JsonGenerationException, JsonMappingException, IOException {
+		List<Project> names = projectService.findAllForcastedEndDates();
+		
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		ObjectMapper objectMapper = new ObjectMapper();
+		objectMapper.setDateFormat(df);
+    	//objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+    	String ns = objectMapper.writeValueAsString(names);
+		
+		return ns;
+	}
+	
+	@RequestMapping(value = "/findAllTypes")
+	public @ResponseBody Object findAllTypes() {
+		List<Project> types = projectService.findAllTypes();
+		return types;
+	}
+	
+	@RequestMapping(value = "/findAllClientNames")
+	public @ResponseBody Object findAllClientNames() {
+		List<Project> cns = projectService.findAllClientNames();
+		return cns;
 	}
 }

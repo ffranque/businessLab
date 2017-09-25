@@ -75,4 +75,24 @@ public class ProjectServiceImpl implements ProjectService {
 		projectRepository.updateForcastedEndDate(forcastedEndDate, id);
 	}
 
+	public List<Project> findAllNames() {
+		return projectRepository.findAllNames();
+	}
+
+	public List<Project> findAllProjectManagers() {
+		return projectRepository.findAllProjectManagers();
+	}
+
+	public List<Project> findAllForcastedEndDates() {
+		return projectRepository.findAllForcastedEndDates();
+	}
+
+	public List<Project> findAllTypes() {
+		return projectRepository.findAllTypes();
+	}
+
+	public List<Project> findAllClientNames() {
+		return projectRepository.findAllClientNames();
+	}
+
 }

@@ -71,3 +71,4 @@
 
 </div>
 <%@ include file="/WEB-INF/jsp/shared/foot.jsp"%>
+<script src="assets/js/clientSearchBar.js"></script>

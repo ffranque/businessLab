@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class Project {
 
@@ -36,7 +38,10 @@ public class Project {
 	private String clientName;
 	private Date beginningDate;
 	private Date endDate;
+	
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date forcastedEndDate;
+	
 	private boolean isCanceled;
 
 	public Date getBeginningDate() {

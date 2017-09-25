@@ -19,13 +19,23 @@ public interface ProjectService {
 
 	List<Client> findAllClientsNames();
 
+	List<Project> findAllNames();
+
+	List<Project> findAllProjectManagers();
+
+	List<Project> findAllForcastedEndDates();
+
+	List<Project> findAllTypes();
+	
+	List<Project> findAllClientNames();
+
 	void updateProjectConsultant(Consultant consultant, Long id);
 
 	void updateName(String name, Long id);
 
 	void updateType(String type, Long id);
 
-	void updateClientName(String clientName,Long id);
+	void updateClientName(String clientName, Long id);
 
 	void updateProjectManager(String projectManager, Long id);
 

@@ -12,7 +12,19 @@
 				</button>
 			</div>
 			<div class="col-md-8">
-				<input type="text" class="form-control" placeholder="Seach">
+				<div class="typeahead__container">
+					<div class="typeahead__field">
+
+						<span class="typeahead__query"> <input
+							class="form-control js-typeahead-project" type="search" placeholder="Search" autocomplete="off">
+						</span> <span class="typeahead__button">
+							<button type="submit">
+								<i class="typeahead__search-icon"></i>
+							</button>
+						</span>
+
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="row"></div>
@@ -49,7 +61,7 @@
 					<td>${project.name}</td>
 					<td>${project.clientName}</td>
 					<td>${project.projectManager}</td>
-					<td>${project.forcastedEndDate}</td>
+					<td><fmt:formatDate pattern="dd-MM-yyyy" value="${project.forcastedEndDate}" /></td>
 					<td>#</td>
 					<td>${project.type}</td>
 				</tr>
@@ -59,3 +71,4 @@
 	</table>
 </div>
 <%@ include file="/WEB-INF/jsp/shared/foot.jsp"%>
+<script src="assets/js/projectSearchBar.js"></script>
