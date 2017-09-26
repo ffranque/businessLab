@@ -24,7 +24,7 @@ import com.amaris.service.ProjectService;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
+//import com.fasterxml.jackson.databind.SerializationFeature;
 
 @Controller
 public class ProjectController {
@@ -38,12 +38,24 @@ public class ProjectController {
 	@Autowired
 	ClientService clientService;
 
-	@RequestMapping(value="/projects")
+	@RequestMapping(value="/projects", method = RequestMethod.GET)
 	public String projects(Model model) {
 		model.addAttribute("title", "Projects");
 		model.addAttribute("project", new Project());
 		model.addAttribute("clientNames", projectService.findAllClientsNames());
 		model.addAttribute("projectList", projectService.findAll());
+		return "projects";
+	}
+	
+	@RequestMapping(value="/psearch", method = RequestMethod.GET)
+	public String searchProjects(@RequestParam("group") String group, @RequestParam("query") String query, Model model) {
+		model.addAttribute("title", "Projects");
+		model.addAttribute("project", new Project());
+		model.addAttribute("clientNames", projectService.findAllClientsNames());
+		model.addAttribute("projectList", projectService.findAll());
+		
+		System.out.println(group + "--" + query);
+		
 		return "projects";
 	}
 	

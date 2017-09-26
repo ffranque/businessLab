@@ -12,7 +12,7 @@ $.typeahead({
 	backdrop : {
 		"background-color" : "#fff"
 	},
-	href : "/beers/{{group|slugify}}/{{display|slugify}}/",
+	href : "/BusinessLab01/csearch.html?group={{group|slugify}}&query={{display}}",
 	emptyTemplate : 'No result for "{{query}}"',
 	source : {
 		"Name" : {

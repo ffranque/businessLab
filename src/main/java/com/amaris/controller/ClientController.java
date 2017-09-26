@@ -30,6 +30,18 @@ public class ClientController {
 		return "clients";
 	}
 	
+	@RequestMapping(value = "/csearch", method = RequestMethod.GET)
+	public String searchClients(@RequestParam("group") String group, @RequestParam("query") String query, Model model) {
+		model.addAttribute("title", "Clients");
+		model.addAttribute("client", new Client());
+		List<Client> clients = clientService.findAll();
+		model.addAttribute("clientList", clients);
+		
+		System.out.println(group + "--" + query);
+		
+		return "clients";
+	}
+	
 	@RequestMapping(value = "/clientDetail", method = RequestMethod.GET)
 	public String clientDetails(Model model, Long id) {
 		model.addAttribute("title", "Details");
