@@ -64,6 +64,16 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
 	@Query("Select c.phoneNumber from Client c")
 	List<Client> findAllPhones();
 	
+	List<Client> findByNameIgnoreCaseContaining(String name);
+	
+	List<Client> findBySectorIgnoreCaseContaining(String sector);
+	
+	List<Client> findByContactNameIgnoreCaseContaining(String contactName);
+	
+	List<Client> findByEmailAddresIgnoreCaseContaining(String emailAddres);
+	
+	List<Client> findByPhoneNumberIgnoreCaseContaining( String phoneNumber);
+	
 	Client findFirstByName(String name);
 
 }

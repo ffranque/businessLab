@@ -12,7 +12,7 @@ import com.amaris.repository.ClientRepository;
 @Service("clientService")
 @Transactional
 public class ClientServiceImpl implements ClientService {
-	
+
 	@Autowired
 	private ClientRepository clientRepository;
 
@@ -91,7 +91,23 @@ public class ClientServiceImpl implements ClientService {
 	public List<Client> findAllPhones() {
 		return clientRepository.findAllPhones();
 	}
-	
-	
+
+	public List<Client> searchClient(String group, String query) {
+		List<Client> clients = null;
+
+		if (group.equalsIgnoreCase("name")) {
+			clients = clientRepository.findByNameIgnoreCaseContaining(query);
+		} else if (group.equalsIgnoreCase("sector")) {
+			clients = clientRepository.findBySectorIgnoreCaseContaining(query);
+		} else if (group.equalsIgnoreCase("contact-name")) {
+			clients = clientRepository.findByContactNameIgnoreCaseContaining(query);
+		} else if (group.equalsIgnoreCase("e-mail")) {
+			clients = clientRepository.findByEmailAddresIgnoreCaseContaining(query);
+		} else if (group.equalsIgnoreCase("contact-phone")) {
+			clients = clientRepository.findByPhoneNumberIgnoreCaseContaining(query);
+		}
+
+		return clients;
+	}
 
 }

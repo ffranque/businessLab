@@ -23,6 +23,8 @@ public interface ClientService {
 	Client findById(Long id);
 
 	Client findFirstByName(String name);
+	
+	List<Client> searchClient(String group, String query);
 
 	void remove(Long id);
 

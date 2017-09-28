@@ -34,10 +34,9 @@ public class ClientController {
 	public String searchClients(@RequestParam("group") String group, @RequestParam("query") String query, Model model) {
 		model.addAttribute("title", "Clients");
 		model.addAttribute("client", new Client());
-		List<Client> clients = clientService.findAll();
+		List<Client> clients = clientService.searchClient(group, query);
 		model.addAttribute("clientList", clients);
-		
-		System.out.println(group + "--" + query);
+		//System.out.println(group + "--" + query);
 		
 		return "clients";
 	}
