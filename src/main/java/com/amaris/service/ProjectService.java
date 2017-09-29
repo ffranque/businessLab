@@ -1,5 +1,6 @@
 package com.amaris.service;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
@@ -28,6 +29,8 @@ public interface ProjectService {
 	List<Project> findAllTypes();
 	
 	List<Project> findAllClientNames();
+	
+	List<Project> searchProject(String group, String query) throws ParseException;
 
 	void updateProjectConsultant(Consultant consultant, Long id);
 

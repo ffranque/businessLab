@@ -1,5 +1,8 @@
 package com.amaris.service;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +18,7 @@ import com.amaris.repository.ProjectRepository;
 @Service("projectService")
 @Transactional
 public class ProjectServiceImpl implements ProjectService {
-	
+
 	@Autowired
 	private ProjectRepository projectRepository;
 
@@ -93,6 +96,26 @@ public class ProjectServiceImpl implements ProjectService {
 
 	public List<Project> findAllClientNames() {
 		return projectRepository.findAllClientNames();
+	}
+
+	public List<Project> searchProject(String group, String query) throws ParseException {
+		List<Project> projects = null;
+		
+		if (group.equalsIgnoreCase("name")) {
+			projects = projectRepository.findByNameIgnoreCaseContaining(query);
+		} else if (group.equalsIgnoreCase("project-manager")) {
+			projects = projectRepository.findByProjectManagerIgnoreCaseContaining(query);
+		} else if (group.equalsIgnoreCase("type")) {
+			projects = projectRepository.findByTypeIgnoreCaseContaining(query);
+		} else if (group.equalsIgnoreCase("fed")) {
+			DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+			Date date = formatter.parse(query);
+			projects = projectRepository.findByForcastedEndDateContaining(date);
+		} else if (group.equalsIgnoreCase("client")) {
+			projects = projectRepository.findByClientNameIgnoreCaseContaining(query);
+		}
+
+		return projects;
 	}
 
 }

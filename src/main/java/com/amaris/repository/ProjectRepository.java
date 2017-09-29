@@ -69,4 +69,14 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
 	
 	@Query("Select p.clientName from Project p")
 	List<Project> findAllClientNames();
+	
+	List<Project> findByNameIgnoreCaseContaining(String name);
+	
+	List<Project> findByProjectManagerIgnoreCaseContaining(String projectManager);
+	
+	List<Project> findByTypeIgnoreCaseContaining(String type);
+	
+	List<Project> findByForcastedEndDateContaining(Date fed);
+	
+	List<Project> findByClientNameIgnoreCaseContaining(String clientName);
 }

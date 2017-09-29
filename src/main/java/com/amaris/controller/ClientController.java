@@ -36,7 +36,6 @@ public class ClientController {
 		model.addAttribute("client", new Client());
 		List<Client> clients = clientService.searchClient(group, query);
 		model.addAttribute("clientList", clients);
-		//System.out.println(group + "--" + query);
 		
 		return "clients";
 	}

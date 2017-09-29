@@ -2,6 +2,7 @@ package com.amaris.controller;
 
 import java.io.IOException;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -48,13 +49,11 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value="/psearch", method = RequestMethod.GET)
-	public String searchProjects(@RequestParam("group") String group, @RequestParam("query") String query, Model model) {
+	public String searchProjects(@RequestParam("group") String group, @RequestParam("query") String query, Model model) throws ParseException {
 		model.addAttribute("title", "Projects");
 		model.addAttribute("project", new Project());
 		model.addAttribute("clientNames", projectService.findAllClientsNames());
-		model.addAttribute("projectList", projectService.findAll());
-		
-		System.out.println(group + "--" + query);
+		model.addAttribute("projectList", projectService.searchProject(group, query));
 		
 		return "projects";
 	}
