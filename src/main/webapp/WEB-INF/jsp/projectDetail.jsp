@@ -8,7 +8,7 @@
 	<div class="row margin-top-15">
 		<div class="col-md-6">
 			<div class="col-md-4">Current Status</div>
-			<div class="col-md-5">######</div>
+			<div class="col-md-5">${project.status}</div>
 		</div>
 	</div>
 	<div class="row margin-top-15">
@@ -20,7 +20,7 @@
 						<div class="col-md-6">
 							<div class="col-md-3">Type</div>
 							<div class="col-md-9">
-								<a href="#" id="type" class="editable editable-click"
+								<a href="#" id="typeP" class="editable editable-click"
 									data-type="text" data-pk="${project.id}"
 									data-url="/BusinessLab01/project/updateType.html">${project.type}</a>
 							</div>
@@ -28,7 +28,7 @@
 						<div class="col-md-6">
 							<div class="col-md-3">Manager</div>
 							<div class="col-md-9">
-								<a href="#" id="projectManager" class="editable editable-click"
+								<a href="#" id="projectManagerP" class="editable editable-click"
 									data-type="text" data-pk="${project.id}"
 									data-url="/BusinessLab01/project/updateManager.html">${project.projectManager}</a>
 							</div>
@@ -38,7 +38,7 @@
 						<div class="col-md-6">
 							<div class="col-md-3">Client</div>
 							<div class="col-md-9">
-								<a href="#" id="clientName" class="editable editable-click"
+								<a href="#" id="clientNameP" class="editable editable-click"
 									data-type="text" data-pk="${project.id}"
 									data-url="/BusinessLab01/project/updateClientName.html">${project.clientName}</a>
 							</div>
@@ -65,7 +65,7 @@
 					<div class="row margin-top-10">
 						<div class="col-md-4">Beginning Date</div>
 						<div class="col-md-8">
-							<a href="#" id="beginningDate" class="editable editable-click"
+							<a href="#" id="beginningDateP" class="editable editable-click"
 									data-type="text" data-pk="${project.id}"
 									data-url="/BusinessLab01/project/updateBeginningDate.html">${project.beginningDate}</a>
 						</div>
@@ -73,7 +73,7 @@
 					<div class="row margin-top-10">
 						<div class="col-md-4">End Date</div>
 						<div class="col-md-8">
-							<a href="#" id="endDate" class="editable editable-click"
+							<a href="#" id="endDateP" class="editable editable-click"
 									data-type="text" data-pk="${project.id}"
 									data-url="/BusinessLab01/project/updateEndDate.html">${project.endDate}</a>
 						</div>
@@ -81,7 +81,7 @@
 					<div class="row margin-top-10">
 						<div class="col-md-4">Forecasted End Date</div>
 						<div class="col-md-8">
-							<a href="#" id="forcastedEndDate" class="editable editable-click"
+							<a href="#" id="forcastedEndDateP" class="editable editable-click"
 									data-type="text" data-pk="${project.id}"
 									data-url="/BusinessLab01/project/updateForcastedEndDate.html">${project.forcastedEndDate}</a>
 						</div>

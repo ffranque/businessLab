@@ -121,7 +121,7 @@
 							<td>${project.name}</td>
 							<td>${project.projectManager}</td>
 							<td>${project.forcastedEndDate}</td>
-							<td>#</td>
+							<td>${project.status}</td>
 							<td>${project.type}</td>
 						</tr>
 					</c:forEach>

@@ -36,12 +36,13 @@ public class Project {
 	private Consultant consultant;
 
 	private String clientName;
+	private String status;
 	private Date beginningDate;
 	private Date endDate;
-	
-	@JsonFormat(pattern="yyyy-MM-dd")
+
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date forcastedEndDate;
-	
+
 	private boolean isCanceled;
 
 	public Date getBeginningDate() {
@@ -82,6 +83,10 @@ public class Project {
 
 	public String getSector() {
 		return sector;
+	}
+
+	public String getStatus() {
+		return status;
 	}
 
 	public String getType() {
@@ -134,6 +139,10 @@ public class Project {
 
 	public void setSector(String sector) {
 		this.sector = sector;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public void setType(String type) {

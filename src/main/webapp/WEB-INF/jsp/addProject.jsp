@@ -29,27 +29,36 @@
 				<form:errors path="projectManager" cssClass="label label-danger" />
 			</div>
 			<div class="form-group">
-				<label for="textinput4">Type</label>
+				<label for="textinput4">Status</label>
+				<form:select path="status" cssClass="form-control">
+					<form:option value="Won" label="Won" />
+					<form:option value="Started" label="Started" />
+					<form:option value="Ended" label="Ended" />
+					<form:option value="Cancelled" label="Cancelled" />
+				</form:select>
+			</div>
+			<div class="form-group">
+				<label for="textinput5">Type</label>
 				<form:select path="type" cssClass="form-control">
 					<form:option value="Time and Material" label="Time and Material" />
 					<form:option value="Fixed Price" label="Fixed Price" />
 				</form:select>
 			</div>
 			<div class="form-group">
-				<label for="textinput5">Sector</label>
+				<label for="textinput6">Sector</label>
 				<form:input path="sector" cssClass="form-control" />
 				<form:errors path="sector" cssClass="label label-danger" />
 			</div>
 			<div class="form-group">
-				<label for="textinput6">Beginning Date</label>
+				<label for="textinput7">Beginning Date</label>
 				<form:input path="beginningDate" cssClass="form-control" />
 			</div>
 			<div class="form-group">
-				<label for="textinput7">End Date</label>
+				<label for="textinput8">End Date</label>
 				<form:input path="endDate" cssClass="form-control" />
 			</div>
 			<div class="form-group">
-				<label for="textinput8">Forcasted End Date</label>
+				<label for="textinput9">Forcasted End Date</label>
 				<form:input path="forcastedEndDate" cssClass="form-control" />
 			</div>
 		</div>

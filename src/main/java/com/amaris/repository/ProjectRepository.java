@@ -76,7 +76,7 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
 	
 	List<Project> findByTypeIgnoreCaseContaining(String type);
 	
-	List<Project> findByForcastedEndDateContaining(Date fed);
+	List<Project> findByForcastedEndDateContaining(java.sql.Date fed);
 	
 	List<Project> findByClientNameIgnoreCaseContaining(String clientName);
 }

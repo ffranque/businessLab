@@ -21,12 +21,12 @@
 		$('#countryD').editable();
 
 		$('#sectorP').editable();
-		$('#forcastedEndDate').editable();
-		$('#endDate').editable();
-		$('#beginningDate').editable();
-		$('#clientName').editable();
-		$('#projectManager').editable();
-		$('#type').editable();
+		$('#forcastedEndDateP').editable();
+		$('#endDateP').editable();
+		$('#beginningDateP').editable();
+		$('#clientNameP').editable();
+		$('#projectManagerP').editable();
+		$('#typeP').editable();
 		$('#nameP').editable();
 
 	});

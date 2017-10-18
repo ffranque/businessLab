@@ -62,7 +62,7 @@
 					<td>${project.clientName}</td>
 					<td>${project.projectManager}</td>
 					<td><fmt:formatDate pattern="dd-MM-yyyy" value="${project.forcastedEndDate}" /></td>
-					<td>#</td>
+					<td>${project.status}</td>
 					<td>${project.type}</td>
 				</tr>
 			</c:forEach>

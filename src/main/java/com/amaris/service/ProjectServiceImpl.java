@@ -109,7 +109,7 @@ public class ProjectServiceImpl implements ProjectService {
 			projects = projectRepository.findByTypeIgnoreCaseContaining(query);
 		} else if (group.equalsIgnoreCase("fed")) {
 			DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-			Date date = formatter.parse(query);
+			java.sql.Date date =new  java.sql.Date(formatter.parse(query).getTime());
 			projects = projectRepository.findByForcastedEndDateContaining(date);
 		} else if (group.equalsIgnoreCase("client")) {
 			projects = projectRepository.findByClientNameIgnoreCaseContaining(query);
